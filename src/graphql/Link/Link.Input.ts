@@ -4,9 +4,6 @@ export const CreateOneLinkInput = inputObjectType({
   name: 'CreateOneLinkInput',
   definition(t) {
     t.nullable.string('name');
-    t.boolean('redirect', {
-      default: false,
-    });
     t.nonNull.string('url');
   },
 });

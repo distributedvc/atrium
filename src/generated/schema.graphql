@@ -4,7 +4,6 @@
 
 input CreateOneLinkInput {
   name: String
-  redirect: Boolean = false
   url: String!
 }
 

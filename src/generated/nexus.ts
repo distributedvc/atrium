@@ -21,7 +21,6 @@ declare global {
 export interface NexusGenInputs {
   CreateOneLinkInput: { // input type
     name?: string | null; // String
-    redirect?: boolean | null; // Boolean
     url: string; // String!
   }
   GetOneLinkInput: { // input type
