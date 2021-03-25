@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  db_atrium:
+    image: postgres
+    networks:
+      - db_network
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: prisma
+
+networks:
+  db_network:

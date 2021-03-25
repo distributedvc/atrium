@@ -1,0 +1,9 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#FFF",
+    "titleBar.inactiveForeground": "#FFF",
+    "titleBar.activeBackground": "#0ca750",
+    "titleBar.inactiveBackground": "#0ca750"
+  },
+  "jest.pathToJest": "yarn test:jest"
+}

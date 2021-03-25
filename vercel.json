@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "regions": ["syd1"],
+  "builds": [
+    {
+      "src": "src/serverless.ts",
+      "use": "@vercel/node",
+      "config": {
+        "helpers": false,
+        "maxDuration": 60
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "src/serverless.ts"
+    }
+  ]
+}
