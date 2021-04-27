@@ -37,6 +37,7 @@ function prismaTestContext() {
   let schema = '';
   let databaseUrl = '';
   let prismaClient: null | PrismaClient = null;
+
   return {
     async before() {
       // Generate a unique schema identifier for this test context
@@ -48,14 +49,13 @@ function prismaTestContext() {
       process.env.POSTGRES_URL = databaseUrl;
 
       // Run the migrations to ensure our schema has the required structure
-      execSync(`"${prismaBinary}" migrate deploy`, {
-        env: {
-          ...process.env,
-          POSTGRES_URL: databaseUrl,
-        },
-      });
+      execSync(
+        `export POSTGRES_URL="${databaseUrl}" && "${prismaBinary}" db push --preview-feature`
+      );
+
       // Construct a new Prisma Client connected to the generated Postgres schema
       prismaClient = new PrismaClient();
+
       return prismaClient;
     },
     async after() {
