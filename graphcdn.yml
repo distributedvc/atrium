@@ -1,0 +1,10 @@
+name: atrium
+originUrl: 'https://atrium.distributed.sh'
+rules:
+  - description: Cache queries
+    maxAge: 900
+    scope: PUBLIC
+    swr: 900
+    types:
+      Query: true
+schema: 'https://atrium.distributed.sh'
