@@ -13,17 +13,13 @@ import { routes } from './routes';
 import { schema } from './schema';
 
 export default function init(): FastifyInstance {
-  const app: FastifyInstance<
-    Server,
-    IncomingMessage,
-    ServerResponse,
-    FastifyLoggerInstance
-  > = fastify({
-    trustProxy: true,
-    logger: pino({
-      level: process.env.NODE_ENV === 'staging' || !process.env.NODE_ENV ? 'debug' : 'info',
-    }),
-  });
+  const app: FastifyInstance<Server, IncomingMessage, ServerResponse, FastifyLoggerInstance> =
+    fastify({
+      trustProxy: true,
+      logger: pino({
+        level: process.env.NODE_ENV === 'staging' || !process.env.NODE_ENV ? 'debug' : 'info',
+      }),
+    });
 
   const isProduction = process.env.NODE_ENV === 'production';
 

@@ -10,7 +10,7 @@ export interface Context {
   reply: FastifyReply;
   prisma: PrismaClient;
   analytics?: typeof Lib.Segment.analytics;
-  correlationId?: string;
+  correlationId: string;
 }
 
 export function createContext({
