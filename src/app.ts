@@ -1,5 +1,6 @@
 import compression from 'fastify-compress';
 import mercurius from 'mercurius';
+import cache from 'mercurius-cache';
 import fastify from 'fastify';
 import cookie from 'fastify-cookie';
 import helmet from 'fastify-helmet';
@@ -52,6 +53,14 @@ export default function init(): FastifyInstance {
   });
 
   app.register(routes);
+
+  app.register(cache, {
+    policy: {
+      Query: {
+        link: true,
+      },
+    },
+  });
 
   return app;
 }
