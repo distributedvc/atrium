@@ -4,9 +4,13 @@ datasource postgresql {
 }
 
 generator client {
-  provider      = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["nApi"]
-  binaryTargets = ["native"]
+  binaryTargets   = ["native"]
+}
+
+generator nexusPrisma {
+  provider = "nexus-prisma"
 }
 
 model Link {

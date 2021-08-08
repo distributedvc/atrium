@@ -19,7 +19,7 @@ brew update && brew upgrade && brew install yarn
 yarn
 
 # Docker compose
-docker-compose up -d
+yarn docker:setup
 
 # serve with file watch at localhost:4000
 yarn dev
